@@ -9,4 +9,9 @@ service firebase.storage {
       allow read, write: if false;
     }
   }
+  match /b/{bucket}/o {
+    match /public/{allPaths=**} {
+      allow read, write: if true;
+    }
+  }
 }
